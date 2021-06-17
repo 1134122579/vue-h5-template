@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tabbarFooter">
     <van-tabbar fixed route v-model="active" @change="handleChange">
       <van-tabbar-item v-for="(item, index) in data" :to="item.to" :icon="item.icon" :key="index">
         {{ item.title }}
@@ -50,5 +50,10 @@ li {
 }
 a {
   color: #42b983;
+}
+.tabbarFooter {
+  overflow: hidden;
+  width: 100%;
+  background: chartreuse;
 }
 </style>

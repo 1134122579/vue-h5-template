@@ -1,7 +1,3 @@
-const api = {
-  Login: '/user/login',
-  UserInfo: '/user/userinfo',
-  UserName: '/user/name'
-}
+import user from './user'
 
-export default api
+export default user

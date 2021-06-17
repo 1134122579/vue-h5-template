@@ -20,16 +20,31 @@ export default {
     return {
       tabbars: [
         {
-          title: '首页',
+          title: '关于我们',
           to: {
-            name: 'Home'
+            name: 'About'
           },
           icon: 'home-o'
         },
         {
-          title: '关于我',
+          title: '企业文化',
           to: {
-            name: 'About'
+            name: 'Culture'
+          },
+          icon: 'user-o'
+        },
+        {
+          title: '案例展示',
+          to: {
+            name: 'Demo'
+          },
+          icon: 'user-o'
+        },
+
+        {
+          title: '联系我们',
+          to: {
+            name: 'Contact'
           },
           icon: 'user-o'
         }
@@ -46,3 +61,20 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss">
+@import '@/assets/css/variables.scss';
+// 设置样式
+.app-container {
+  width: 100%;
+  height: 100%;
+  .layout-content {
+    height: 100%;
+    background: $pageBackground;
+  }
+  .layout-footer {
+    overflow: hidden;
+  }
+}
+</style>
