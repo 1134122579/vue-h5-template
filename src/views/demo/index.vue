@@ -102,7 +102,7 @@ export default {
   .listStyle {
     width: 100%;
     // min-height: 250px;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     @include flexbox(center, center, column);
     .text {

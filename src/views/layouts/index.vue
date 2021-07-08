@@ -27,7 +27,7 @@ export default {
           icon: 'home-o'
         },
         {
-          title: '企业文化',
+          title: '业务范围',
           to: {
             name: 'Culture'
           },
@@ -61,7 +61,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss">
 @import '@/assets/css/variables.scss';
