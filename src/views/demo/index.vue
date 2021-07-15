@@ -33,7 +33,7 @@ import SwiperList from '@/components/Swiper.vue'
 import { getFlimClass } from '@/api/user'
 export default {
   components: {
-    SwiperList
+    // SwiperList
   },
   filters: {
     bgbFilter(data) {
@@ -55,7 +55,7 @@ export default {
 
   methods: {
     goPage(data) {
-      let { id } = data
+      const { id } = data
       this.$router.push({
         path: '/DemoContent',
         query: {

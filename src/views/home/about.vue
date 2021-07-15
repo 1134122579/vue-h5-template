@@ -40,14 +40,15 @@ export default {
   mounted() {
     this.initData()
   },
+
   methods: {
     // 请求数据案例
     initData() {
       // 请求接口数据，仅作为展示，需要配置src->config下环境文件
       const params = { user: 'sunnie' }
       getUserInfo(params)
-        .then(() => { })
-        .catch(() => { })
+        .then(() => {})
+        .catch(() => {})
     },
     // Action 通过 store.dispatch 方法触发
     doDispatch() {
@@ -97,7 +98,7 @@ export default {
       .logo {
         width: 120px;
         height: 120px;
-        background: url($cdn+'/weapp/logo.png') center / contain no-repeat;
+        background: url($cdn + '/weapp/logo.png') center / contain no-repeat;
       }
       .wechat {
         width: 200px;

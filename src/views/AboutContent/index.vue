@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     getContent() {
-      let { id } = this.$route.query
+      const { id } = this.$route.query
       if (id) {
         getAbout({
           id
