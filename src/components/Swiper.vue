@@ -9,12 +9,21 @@
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="(item, index) in swiperList" :key="index" class="swiperStyleSon">
+      <swiper-slide v-for="(item, index) in swiperList" :key="item.id" class="swiperStyleSon">
         <div class="content">
+          <van-image :src="item.image"></van-image>
+
+          <div class="buttonStyle">
+            <van-button v-if="swiperList.length == index + 1" block type="success" round @click="goLook"
+              >立即进入</van-button
+            >
+          </div>
+
           <!-- <van-image src=""></van-image> -->
-          <div class="text">Slide {{ index }} {{ item }}</div>
+          <!-- <div class="text">Slide {{ index }} {{ item }}</div> -->
         </div>
       </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -41,6 +50,12 @@ export default {
     return {
       newTime: new Date(),
       swiperOption: {
+        loop: false,
+        autoplay: {
+          delay: 3000,
+          stopOnLastSlide: true,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination'
         }
@@ -48,6 +63,11 @@ export default {
     }
   },
   methods: {
+    goLook() {
+      this.$router.push({
+        path: '/about'
+      })
+    },
     onSwiper(swiper) {
       console.log(swiper)
     },
@@ -69,7 +89,13 @@ export default {
       height: 100%;
       .content {
         height: 100%;
-        @include flexbox(center, center, column);
+        @include flexbox(space-between, center, column);
+        .buttonStyle {
+          width: 100%;
+          margin-bottom: 20px;
+          padding: 20px;
+          box-sizing: border-box;
+        }
       }
       // background: red;
     }

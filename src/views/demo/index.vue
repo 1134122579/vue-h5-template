@@ -101,8 +101,9 @@ export default {
   // 目录
   .listStyle {
     width: 100%;
-    // min-height: 250px;
+    height: 200px;
     background-size: 100% 100%;
+    margin-top: 10px;
     background-repeat: no-repeat;
     @include flexbox(center, center, column);
     .text {

@@ -27,7 +27,7 @@ export default {
           icon: 'home-o'
         },
         {
-          title: '业务范围',
+          title: '企业文化',
           to: {
             name: 'Culture'
           },
