@@ -67,3 +67,11 @@ export function getFlimClass(params) {
     hideloading: true
   })
 }
+
+export function getShare(data) {
+  return request({
+    url: api.getShare,
+    method: 'post',
+    data,
+  })
+}

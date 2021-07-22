@@ -57,7 +57,7 @@ export default {
 @import '@/assets/css/mixin.scss';
 
 .content {
-  margin-top: 16%;
+  margin-top: 18%;
   height: 100%;
   // background: $contentBackground;
   .headerImg {

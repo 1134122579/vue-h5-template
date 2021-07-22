@@ -24,21 +24,21 @@ export default {
           to: {
             name: 'About'
           },
-          icon: 'home-o'
+          icon: 'info-o'
         },
         {
           title: '企业文化',
           to: {
             name: 'Culture'
           },
-          icon: 'user-o'
+          icon: 'home-o'
         },
         {
           title: '案例展示',
           to: {
-            name: 'Demo'
+            name: 'Demohome'
           },
-          icon: 'user-o'
+          icon: 'description'
         },
 
         {

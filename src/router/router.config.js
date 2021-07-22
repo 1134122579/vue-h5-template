@@ -2,24 +2,23 @@
  * 基础路由
  * @type { *[] }
  */
-export const constantRouterMap = [{
+export const constantRouterMap = [
+  {
     path: '/',
-    component: () =>
-      import('@/views/index/index'),
+    component: () => import('@/views/index/index')
   },
   {
     path: '/about',
-    component: () =>
-      import('@/views/layouts/index'),
+    component: () => import('@/views/layouts/index'),
     meta: {
       title: '关于我们',
       keepAlive: false
     },
-    children: [{
+    children: [
+      {
         path: '/about',
         name: 'About',
-        component: () =>
-          import('@/views/about/index'),
+        component: () => import('@/views/about/index'),
         meta: {
           title: '关于我们',
           keepAlive: false
@@ -28,8 +27,7 @@ export const constantRouterMap = [{
       {
         path: '/culture',
         name: 'Culture',
-        component: () =>
-          import('@/views/culture/index'),
+        component: () => import('@/views/culture/index'),
         meta: {
           title: '企业文化',
           keepAlive: false
@@ -38,33 +36,42 @@ export const constantRouterMap = [{
       {
         path: '/demo',
         name: 'Demo',
-        component: () =>
-          import('@/views/demo/index'),
+        component: () => import('@/views/demo/index'),
         meta: {
           title: '案例展示',
           keepAlive: false
         }
-      }, {
+      },
+      {
         path: '/contact',
         name: 'Contact',
-        component: () =>
-          import('@/views/contact/index'),
+        component: () => import('@/views/contact/index'),
         meta: {
           title: '联系我们',
           keepAlive: false
         }
-      }
+      },
+
     ]
-  }, {
+  },
+  {
+    path: '/demohome',
+    name: 'Demohome',
+    component: () => import('@/views/demo/home')
+  },
+  {
     path: '/AboutContent',
     name: 'AboutContent',
-    component: () =>
-      import('@/views/AboutContent/index')
-  }, {
+    component: () => import('@/views/AboutContent/index')
+  },
+  {
     path: '/DemoContent',
     name: 'DemoContent',
-    component: () =>
-      import('@/views/DemoContent/index')
+    component: () => import('@/views/DemoContent/index')
+  },
+  {
+    path: '*',
+    redirect: '/',
+    // hidden: true
   }
-
 ]

@@ -2,20 +2,25 @@
   <div class="contact">
     <!-- {{ getData }} -->
     <div class="top">
-      <p>
+      <p class="lookText">
+        <van-icon name="phone-o" />
         <a :href="'tel:' + getData.phone">{{ getData.phone }}</a>
       </p>
-      <p>
+      <p class="lookText">
+        <van-icon name="phone-o" />
         <a :href="'tel:' + getData.mobile">{{ getData.mobile }}</a>
       </p>
-      <p>
+      <p class="lookText">
+        <van-icon name="envelop-o" />
         <a :href="'mailto:' + getData.email">{{ getData.email }}</a>
       </p>
+
       <!-- <p>{{ getData.gzh }}</p> -->
-      <p>{{ getData.wx }}</p>
+      <p class="lookText"><van-icon name="user-o" />{{ getData.wx }}</p>
     </div>
     <div class="bottom">
       <p v-for="(item, index) in getData.address" :key="index">
+        <van-icon name="location-o" />
         <a :href="'http://api.map.baidu.com/geocoder?address=' + item + '&output=html&src=webapp.baidu.openAPIdemo'">
           {{ item }}</a
         >
@@ -58,11 +63,28 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  .van-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
   // align-items: center;
+  .lookText {
+    width: 70%;
+    margin-left: 30%;
+  }
+  // .top {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-end;
+  //   align-content: center;
+  // }
   p {
     text-align: right;
     font-size: 18px;
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
     a {
       color: #333;
       text-decoration: none;

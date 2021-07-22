@@ -1,9 +1,27 @@
 <template>
   <div class="content">
-    <Navbar :title="getData.title"></Navbar>
-    <h4 class="title">{{ getData.title }}</h4>
-    <div class="contentHtml">
-      <div v-html="getData.content"></div>
+    <!-- <Navbar :title="getData.name"></Navbar> -->
+    <div class="nav">
+      <van-icon name="arrow-left" size="40" @click="goOut" />
+    </div>
+    <div class="border">
+      <div class="borderone borderColor"></div>
+      <div class="bordertwo borderColor"></div>
+      <div class="border3 borderColor"></div>
+    </div>
+    <div class="list" v-if="getData.length > 0">
+      <div class="listStyle" v-for="(item, index) in getData" :key="index">
+        <h4 class="title">{{ item.name }}</h4>
+        <div class="desc">
+          {{ item.desc }}
+        </div>
+        <div class="contentHtml">
+          <van-image :src="item.img" style="width: 100%"></van-image>
+        </div>
+      </div>
+    </div>
+    <div class="NullStyle" v-if="getData.length <= 0">
+      <van-empty description="暂无数据" />
     </div>
   </div>
 </template>
@@ -24,6 +42,9 @@ export default {
     this.getContent()
   },
   methods: {
+    goOut() {
+      this.$router.go(-1)
+    },
     getContent() {
       const { id } = this.$route.query
       if (id) {
@@ -31,9 +52,9 @@ export default {
           class_id: id
         }).then(res => {
           console.log(res.data)
-          this.getData = res.data[0]
+          this.getData = res.data
           if (res.data || res.data.length <= 0) {
-            alert('暂无内容！')
+            // alert('暂无内容！')
             // this.$router.go(-1)
             return
           }
@@ -51,15 +72,48 @@ export default {
 @import '@/assets/css/mixin.scss';
 
 .content {
-  margin: 20px;
-  height: 100%;
-  background: $contentBackground;
+  // margin: 20px;
+  // height: 100%;
+  background: #fff;
+  // background: $contentBackground;
+  .nav {
+    padding: 20px 0 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .border {
+    padding-left: 20px;
+    .borderColor {
+      border-bottom: 4px solid #fe9526;
+      margin-bottom: 20px;
+    }
+    .borderone {
+      width: 40%;
+    }
+    .bordertwo {
+      width: 30%;
+    }
+    .border3 {
+      width: 20%;
+    }
+  }
   .title {
-    font-size: 20px;
+    font-size: 24px;
+    text-shadow: 4px 5px 5px #333;
+    text-align: center;
+  }
+  .desc {
+    font-size: 16px;
     text-align: center;
   }
   .contentHtml {
     margin-top: 20px;
+  }
+  .NullStyle {
+    text-align: center;
+    width: 100%;
+    height: 80vh;
   }
 }
 </style>
